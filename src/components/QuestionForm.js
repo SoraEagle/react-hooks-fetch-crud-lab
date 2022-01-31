@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-function QuestionForm(props) {
+function QuestionForm({newQuestion}){
   const [formData, setFormData] = useState({
     prompt: "",
     answer1: "",
@@ -10,19 +10,30 @@ function QuestionForm(props) {
     correctIndex: 0,
   });
 
-  function handleChange(event) {
+  function handleChange(event){ //function for handling the changing of prompt, answers, and correctIndex
     setFormData({
       ...formData,
       [event.target.name]: event.target.value,
     });
   }
 
-  function handleSubmit(event) {
+  // Create an Array of the answers?
+  function handleSubmit(event){ //Edit this function!!!
     event.preventDefault();
+
+    
+
+    fetch("http://localhost:4000/items", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(formData),
+    })
+    // .then((r) => r.json())
+    // .then((newQuestion) => onAddQuestion(newQuestion)); // Create the function and Object!
     console.log(formData);
   }
 
-  return (
+  return(
     <section>
       <h1>New Question</h1>
       <form onSubmit={handleSubmit}>
