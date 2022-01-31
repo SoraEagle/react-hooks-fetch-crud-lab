@@ -1,8 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import QuestionItem from "./QuestionItem";
 
-function QuestionList({qList}){
+function QuestionList(){
+  const [qList, setQList] = useState([]); //State for the list of questions.
   // Add state?
+
+  useEffect(() => { // fetch function inside of useEffect.
+    fetch("http://localhost:4000/questions") //Default fetch request to fetch the list of questions. (Array)
+    .then((r) => r.json())
+    .then((data) => setQList(data));
+  }, []);
+
+  // console.log("qList", qList);
 
   return(
     <section>

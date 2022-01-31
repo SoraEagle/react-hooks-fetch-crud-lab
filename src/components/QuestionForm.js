@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function QuestionForm({onAddQuestion}){
+function QuestionForm({qList, setQList}){
   const [formData, setFormData] = useState({
     prompt: "",
     answer1: "",
@@ -17,18 +17,25 @@ function QuestionForm({onAddQuestion}){
     });
   }
 
-  // Create an Array of the answers?
+  // function handleAddQuestion(newQuestion){
+  //   setQList([...qList, newQuestion]);
+  // }
+
   function handleSubmit(event){ //Edit this function!!!
     event.preventDefault();
 
-    fetch("http://localhost:4000/questions", {
+    fetch("http://localhost:4000/questions", { //POST fetch request to post new questions to qList
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(formData),
+      body: JSON.stringify({ //Use the formData object's data to create the new question object.
+        prompt: formData.prompt,
+        answers: [formData.answer1, formData.answer2, formData.answer3, formData.answer4], // Creates an Array of the answers.
+        correctIndex: formData.correctIndex
+      }),
     })
-    // .then((r) => r.json())
-    // .then((newQuestion) => onAddQuestion(newQuestion)); // Create the function and Object!
-    // console.log(formData);
+    .then((r) => r.json())
+    .then((newQuestion) => setQList([...qList, newQuestion])); // Keeps creating the Object 3 times per click...
+    console.log(qList);
   }
 
   return(

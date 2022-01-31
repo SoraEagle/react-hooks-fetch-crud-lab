@@ -65,33 +65,6 @@
         "controlled"
       ],
       "correctIndex": 1
-    },
-    {
-      "prompt": "What is the correct syntax for destructuring props?",
-      "answer1": "function Hello (props){ ...",
-      "answer2": "function Hello ({hi, bye}){...",
-      "answer3": "function Hello ({hi}, {bye}){ ...",
-      "answer4": "function Hello (hi, bye){ ...",
-      "correctIndex": "1",
-      "id": 7
-    },
-    {
-      "prompt": "What is the correct syntax for destructuring props?",
-      "answer1": "function Hello (props){ ...",
-      "answer2": "function Hello ({hi, bye}){...",
-      "answer3": "function Hello ({hi}, {bye}){ ...",
-      "answer4": "function Hello (hi, bye){ ...",
-      "correctIndex": "1",
-      "id": 8
-    },
-    {
-      "prompt": "What is the correct syntax for destructuring props?",
-      "answer1": "function Hello (props){ ...",
-      "answer2": "function Hello ({hi, bye}){...",
-      "answer3": "function Hello ({hi}, {bye}){ ...",
-      "answer4": "function Hello (hi, bye){ ...",
-      "correctIndex": "1",
-      "id": 9
     }
   ]
 }

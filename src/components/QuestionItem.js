@@ -2,6 +2,7 @@ import React from "react";
 
 function QuestionItem({question}){ //question is brought down from QuestionList.
   const {id, prompt, answers, correctIndex} = question; // question object; Should a key be added?
+  // console.log("question", question);
 
   // Do the fetch PATCH and/or DELETE requests belong here?
 
