@@ -19,11 +19,16 @@ function App(){
   // Where does the fetch PATCH request belong?
   // Is any cleanup needed?
 
+  function handleAddQuestion(newQuestion){
+    setQList([...qList, newQuestion]);
+  }
+
   return(
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm 
-      qList={qList} setQList={setQList} 
+      {page === "Form" ? <QuestionForm
+      qList={qList} setQList={setQList}
+      onAddQuestion={handleAddQuestion}
       newQuestion={newQuestion} setNewQuestion={setNewQuestion} /> : 
       <QuestionList qList={qList} />}
     </main>
