@@ -9,9 +9,6 @@ function App(){
   const [qList, setQList] = useState([]);
   // Is any other state needed here?
 
-  // Where does the fetch PATCH request belong?
-  // Is any cleanup needed?
-
   return(
     <main>
       <AdminNavBar onChangePage={setPage} />
