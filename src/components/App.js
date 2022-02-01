@@ -6,7 +6,8 @@ import QuestionList from "./QuestionList";
 function App(){
   const [page, setPage] = useState("List"); 
   const [newQuestion, setNewQuestion] = useState("");
-  // Is any other state needed?
+  const [qList, setQList] = useState([]);
+  // Is any other state needed here?
 
   // Where does the fetch PATCH request belong?
   // Is any cleanup needed?
@@ -15,8 +16,10 @@ function App(){
     <main>
       <AdminNavBar onChangePage={setPage} />
       {page === "Form" ? <QuestionForm
+      qList={qList} setQList={setQList}
       newQuestion={newQuestion} setNewQuestion={setNewQuestion} /> : 
-      <QuestionList />}
+      <QuestionList
+      qList={qList} setQList={setQList} />}
     </main>
   );
 }

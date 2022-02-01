@@ -17,10 +17,6 @@ function QuestionForm({qList, setQList}){
     });
   }
 
-  // function handleAddQuestion(newQuestion){
-  //   setQList([...qList, newQuestion]);
-  // }
-
   function handleSubmit(event){ //Edit this function!!!
     event.preventDefault();
 
@@ -34,8 +30,7 @@ function QuestionForm({qList, setQList}){
       }),
     })
     .then((r) => r.json())
-    .then((newQuestion) => setQList([...qList, newQuestion])); // Keeps creating the Object 3 times per click...
-    console.log(qList);
+    .then((newQuestion) => setQList([...qList, newQuestion]));
   }
 
   return(

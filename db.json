@@ -65,6 +65,28 @@
         "controlled"
       ],
       "correctIndex": 1
+    },
+    {
+      "prompt": "What is the correct syntax for destructuring props into a child component?",
+      "answers": [
+        "function Hello (props){ ...",
+        "function Hello ({hi, bye}){...",
+        "function Hello ({hi}, {bye}){ ...",
+        "function Hello (hi, bye){ ..."
+      ],
+      "correctIndex": "1",
+      "id": 7
+    },
+    {
+      "prompt": "Is this a valid question?",
+      "answers": [
+        "No",
+        "Yes",
+        "True",
+        "False"
+      ],
+      "correctIndex": "1",
+      "id": 8
     }
   ]
 }
