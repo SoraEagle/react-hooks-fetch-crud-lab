@@ -7,7 +7,6 @@ function App(){
   const [page, setPage] = useState("List"); 
   const [newQuestion, setNewQuestion] = useState("");
   const [qList, setQList] = useState([]);
-  // Is any other state needed here?
 
   return(
     <main>

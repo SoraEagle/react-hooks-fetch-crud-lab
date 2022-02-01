@@ -17,7 +17,7 @@ function QuestionForm({qList, setQList}){
     });
   }
 
-  function handleSubmit(event){ //Edit this function!!!
+  function handleSubmit(event){ // Function for adding new questions to the list(qList)
     event.preventDefault();
 
     fetch("http://localhost:4000/questions", { //POST fetch request to post new questions to qList
@@ -33,62 +33,51 @@ function QuestionForm({qList, setQList}){
     .then((newQuestion) => setQList([...qList, newQuestion]));
   }
 
-  return(
+  return( //Does it have to be this long?  In the future, look for ways to reduce space complexity...
     <section>
       <h1>New Question</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Prompt:
           <input
-            type="text"
-            name="prompt"
+            type="text" name="prompt"
             value={formData.prompt}
-            onChange={handleChange}
-          />
+            onChange={handleChange} />
         </label>
         <label>
           Answer 1:
           <input
-            type="text"
-            name="answer1"
+            type="text" name="answer1"
             value={formData.answer1}
-            onChange={handleChange}
-          />
+            onChange={handleChange} />
         </label>
         <label>
           Answer 2:
           <input
-            type="text"
-            name="answer2"
+            type="text" name="answer2"
             value={formData.answer2}
-            onChange={handleChange}
-          />
+            onChange={handleChange} />
         </label>
         <label>
           Answer 3:
           <input
-            type="text"
-            name="answer3"
+            type="text" name="answer3"
             value={formData.answer3}
-            onChange={handleChange}
-          />
+            onChange={handleChange} />
         </label>
         <label>
           Answer 4:
           <input
-            type="text"
-            name="answer4"
+            type="text" name="answer4"
             value={formData.answer4}
-            onChange={handleChange}
-          />
+            onChange={handleChange} />
         </label>
         <label>
           Correct Answer:
           <select
             name="correctIndex"
             value={formData.correctIndex}
-            onChange={handleChange}
-          >
+            onChange={handleChange} >
             <option value="0">{formData.answer1}</option>
             <option value="1">{formData.answer2}</option>
             <option value="2">{formData.answer3}</option>

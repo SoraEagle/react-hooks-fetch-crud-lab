@@ -9,7 +9,7 @@
         "key",
         "prop"
       ],
-      "correctIndex": 2
+      "correctIndex": "2"
     },
     {
       "id": 2,
@@ -87,6 +87,17 @@
       ],
       "correctIndex": "1",
       "id": 8
+    },
+    {
+      "prompt": "This is a valid question.",
+      "answers": [
+        "No",
+        "Yes",
+        "True",
+        "False"
+      ],
+      "correctIndex": "3",
+      "id": 9
     }
   ]
 }
