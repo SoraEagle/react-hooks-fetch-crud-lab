@@ -1,19 +1,18 @@
 import React from "react";
 
 function QuestionItem({question, onUpdateQuestion, onDeleteQuestion}){
-  const {id, prompt, answers, correctIndex} = question; // question object; Should a key be added?
-  // console.log("question", question);
+  const {id, prompt, answers, correctIndex} = question; // The question object; Should a key be added?
 
-  function updateQuestion(){ //The umbrella function for updating a question
-    fetch(`http://localhost:4000/questions/${question.id}`, { // PATCH fetch request to update a question on qList
+  function updateQuestion(event){ //The umbrella function for updating a question.
+    fetch(`http://localhost:4000/questions/${question.id}`, { // PATCH fetch request to update a question on qList.
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({
-        correctIndex: question.correctIndex // 
+        correctIndex: event.target.value // Changes correctIndex (the correct answer) to event.target.value from the dropdown).
       })
     })
     .then((r) => r.json())
-    .then((updatedQuestion) => onUpdateQuestion(updatedQuestion));
+    .then((updatedQuestion) => onUpdateQuestion(updatedQuestion)); //Invoke onUpdateQuestion, callback from QuestionList (handleUpdateQuestion).
   }
   
   function deleteQuestion(){ //Function for deleting a question.
@@ -36,7 +35,7 @@ function QuestionItem({question, onUpdateQuestion, onDeleteQuestion}){
       <h5>Prompt: {prompt}</h5>
       <label>
         Correct Answer:
-        <select defaultValue={correctIndex}>{options} onChange={updateQuestion}</select>
+        <select defaultValue={correctIndex} onChange={updateQuestion}>{options}</select>
       </label>
       <button onClick={deleteQuestion}>Delete Question</button>
     </li>
